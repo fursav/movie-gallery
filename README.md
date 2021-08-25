@@ -3,7 +3,7 @@
 Simple angular app to display basic movie information.
 
 ## Features
-- See which movies are currently in theather
+- See which movies are currently in theater
 - See which movies are currently popular
 - See which movies are highest rated all time
 - Search for a specific movie
