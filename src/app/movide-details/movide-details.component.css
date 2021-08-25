@@ -1,0 +1,32 @@
+.dialog-title {
+    display: flex;
+    align-items: center;
+}
+
+.dialog-title h2 {
+    margin: 0;
+    padding-right: 10px;
+}
+
+.dialog-title button {
+    margin-left: auto;
+}
+
+h5 {
+    margin: 0;
+}
+
+.dialog-content {
+    display: flex;
+}
+
+.dialog-content p {
+    padding: 0 10px;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.player-container {
+    display: flex;
+    align-items: center;
+}

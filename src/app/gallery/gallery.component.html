@@ -1,0 +1,43 @@
+<div class="controls"
+     *ngIf="movieList.length > 10">
+    <mat-paginator [length]="totalResults"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   hidePageSize="true"
+                   (page)="onPageChange($event)"
+                   aria-label="Select page">
+    </mat-paginator>
+</div>
+<ul>
+    <li *ngFor="let movie of movieList;">
+        <div class="poster-container"
+             (click)="showMovieDetails(movie)">
+            <img *ngIf="movie.poster_path"
+                 style="display: block;"
+                 [src]="'http://image.tmdb.org/t/p/w342/' + movie.poster_path"
+                 [alt]="movie.title">
+            <div *ngIf="!movie.poster_path"
+                 style="background-color: #dbdbdb; width: 342px; height: 513px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;">
+                <div style="flex: 1; display: flex; align-items: center;">
+                    <mat-icon style="font-size: 300px; color: #999;"
+                              inline="true">image</mat-icon>
+                </div>
+                <h4>{{movie.title}}</h4>
+            </div>
+        </div>
+    </li>
+</ul>
+<div *ngIf="movieList.length === 0"
+     style="text-align: center;">
+    No Results
+</div>
+<div class="controls"
+     *ngIf="movieList.length > 10">
+    <mat-paginator [length]="totalResults"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   hidePageSize="true"
+                   (page)="onPageChange($event)"
+                   aria-label="Select page">
+    </mat-paginator>
+</div>

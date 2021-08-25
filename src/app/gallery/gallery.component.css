@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 10px 0;
+}
+
+li {
+    padding: 10px;
+}
+
+.poster-container {
+    cursor: pointer;
+}
+
+.poster-container:hover {
+    box-shadow: #bbb 0 0 11px 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 50px;
+}

@@ -1,0 +1,42 @@
+<div mat-dialog-title>
+    <div class="dialog-title">
+        <h2>{{data.title}}</h2>
+        <button mat-icon-button
+                mat-dialog-close
+                aria-label="Close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div style="display: flex;"
+         *ngIf="data.release_date">
+        <mat-icon>star</mat-icon>
+        <h5>{{data.vote_average || 'NR'}}</h5>
+        <span style="padding: 0 10px;">-</span>
+        <h5>{{data.release_date | date: 'yyyy'}}</h5>
+    </div>
+    <mat-chip-list aria-label="Genres">
+        <mat-chip *ngFor="let genre of genreList">{{genre}}</mat-chip>
+    </mat-chip-list>
+</div>
+<div mat-dialog-content
+     class="dialog-content">
+    <div *ngIf="trailerList[trailerIndex]"
+         class="player-container">
+        <button mat-icon-button
+                aria-label="Previous"
+                *ngIf="trailerList.length > 1"
+                (click)="previousTrailer()">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <youtube-player [videoId]="trailerList[trailerIndex].key"
+                        suggestedQuality="highres">
+        </youtube-player>
+        <button mat-icon-button
+                aria-label="Next"
+                *ngIf="trailerList.length > 1"
+                (click)="nextTrailer()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+    <p>{{data.overview}}</p>
+</div>

@@ -1,0 +1,19 @@
+<nav mat-tab-nav-bar
+     style="float: 1;">
+    <a mat-tab-link
+       *ngFor="let link of this.tabList"
+       [routerLink]="link.route"
+       routerLinkActive
+       #rla="routerLinkActive"
+       [active]="rla.isActive">
+        {{link.label}}
+    </a>
+    <a mat-tab-link>
+        <mat-icon>search</mat-icon>
+        <input type="search"
+               #searchBox
+               placeholder="Search"
+               (input)="search(searchBox.value)"
+               (keyup.enter)="search(searchBox.value)">
+    </a>
+</nav>
